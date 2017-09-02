@@ -100,7 +100,7 @@ namespace TakeHome.Web
         }
 
         [HttpPost]
-        public async Task<IHttpActionResult> PostCase(CaseViewModel caseViewModel)
+        public async Task<IHttpActionResult> PostCase(InsertCaseViewModel caseViewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -109,8 +109,15 @@ namespace TakeHome.Web
 
             EmployeeCase employeeCase = new EmployeeCase();
             //Mapper.Map(caseViewModel, employeeCase);
+            employeeCase.EmployeeId = caseViewModel.EmployeeId;
+            employeeCase.StartDate = caseViewModel.StartDate;
+            employeeCase.EndDate = caseViewModel.EndDate;
+            employeeCase.CaseNumber = caseViewModel.CaseNumber;
+            employeeCase.Approved = caseViewModel.Approved;
+            employeeCase.Denied = caseViewModel.Denied;
+
             _employeeCaseService.AddAsync(employeeCase);
-            return CreatedAtRoute("ApiRoute", new { id = employeeCase.Id }, caseViewModel);
+            return Ok(caseViewModel);
         }
     }
 }

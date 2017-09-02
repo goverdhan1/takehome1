@@ -44,6 +44,7 @@
     <Compile Include="CaseViewModel.cs" />
     <Compile Include="EmployeeViewModel.cs" />
     <Compile Include="DashboardViewModel.cs" />
+    <Compile Include="InsertCaseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
