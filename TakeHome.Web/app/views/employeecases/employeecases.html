@@ -1,0 +1,22 @@
+<hr />
+<div class="row">
+    <div class="bs-component">
+        <div class="list-group">
+            <div class="col-md-4" ng-repeat="employee in employees">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="list-group-item">
+                            <div class="row-picture">
+                                <img class="circle" src="http://lorempixel.com/56/56/people/{{$index}}" alt="icon">
+                            </div>
+                            <div class="row-content">
+                                <h4 class="list-group-item-heading">{{employee.firstName}} {{employee.lastName}}</h4>
+                                <p class="list-group-item-text">{{employee.employeeId}}</p>
+                                <p class="list-group-item-text">{{employee.employer}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
