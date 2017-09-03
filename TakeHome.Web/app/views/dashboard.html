@@ -1,0 +1,51 @@
+<section class="container" ng-controller="dashboardCtrl">
+    <header class="page-header">Absence<span class="logo">Soft</span> | <span class="subtitle">Home Page</span></header>
+
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <div class="gray-bg">
+                <h2 class="section-title txt-blue">All Employees <span class="pull-right glyphicon glyphicon-user"></span></h2>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Employee ID</th>
+                            <th>Employer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="emp in employees track by $index">
+                            <td><a ui-sref="employeeCase({id:$index + 1})">{{emp.firstName}} {{emp.lastName}}</a></td>
+                            <td>{{emp.employeeNumber}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="gray-bg">
+                <h2 class="section-title txt-red">Approved Cases<span class="pull-right glyphicon glyphicon-briefcase"></span></h2>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Case Id</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="case in cases">
+                            <td>{{case.firstName}} {{case.lastName}}</td>
+                            <td>{{case.caseNumber}}</td>
+                            <td ng-if="case.status=='Approved'">Approved</td>
+                            <td ng-if="case.status!='Approved'">Denied</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

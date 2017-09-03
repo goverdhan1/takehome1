@@ -1,18 +1,30 @@
 ﻿<!DOCTYPE html>
-<html lang="en-us" class="no-js">
+<html ng-app="app">
 <head>
-    <base href="/">
-    <meta charset="utf-8">
-    <title>Take Home Website</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="styles/style.css" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+
 </head>
-<body>
-    <ng-view ng-app="app">
-        <!-- TO DO: Implement routing and display view here-->
-    </ng-view>
+<body class="ng-cloak">
+	<div class="container">
+		<div ui-view></div>
+		 <footer class="footer">
+			<div class="container">
+				<p></p>
+			</div>
+		</footer> 
+	</div>
+	<script src="app/app.js"></script>
+	<script src="app/controller/dashboardCtrl.js"></script>
+	<script src="app/controller/employeeCaseCtrl.js"></script>
+	<script src="app/services/details.js"></script>
 </body>
-
 </html>

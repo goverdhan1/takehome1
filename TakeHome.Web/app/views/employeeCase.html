@@ -1,0 +1,38 @@
+<section class="container" ng-controller="employeeCaseCtrl">
+<header class="page-header">
+    {{employee.firstName}}  {{employee.lastName}} <span class="seperater">|</span> <Span class="subtitle">
+        EMPLOYEE ID {{employee.employeeNumber}}
+    </Span>
+    <div class="pull-right">
+        <button class="btn btn-primary" ng-click="open()"><span class="glyphicon glyphicon-plus"> </span> Create New Case</button>
+    </div>
+</header>
+
+ <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-body" id="modal-body">
+
+                <p>StartDate: <input type="text" id="datepicker1"></p>
+                <p>EndDate: <input type="text" id="datepicker2"></p>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+        </div>
+    </script>
+
+
+<div>
+                <p ng-repeat="empCase in empCases" class="caseList">
+                    <span class="indicator" ng-class="{'approved' : empCase.status=='Approved'}"> &nbsp; </span>
+                    <span>CASE ID: {{empCase.caseNumber}}</span>
+                    <span class="seperater"> | </sapn>
+                    <span class="status" ng-if="empCase.status=='Approved'">Approved</span>
+                    <span class="status" ng-if="empCase.status!='Approved'">Denied</span>
+                    <span class="pull-right">
+                    <span>{{empCase.startDate | date:short}}</span> - 
+                    <span>{{empCase.endDate | date:short}}</span>
+                    </span>
+                </p>
+</div>
+</section>
